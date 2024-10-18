@@ -24,7 +24,7 @@ const geistMono = localFont({
 
 export async function generateMetadata(): Promise<Metadata> {
   const metadata = await getGlobalPageMetadata();
-  console.log(metadata);
+  //console.log(metadata);
   const { title, description } = metadata?.data;
 
   return {
