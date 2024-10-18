@@ -12,7 +12,7 @@ function blockRenderer(block: any) {
   //console.log(block.__component as keyof typeof blockComponents);
   const Component =
     blockComponents[block.__component as keyof typeof blockComponents];
-  console.log(Component);
+  //console.log(Component);
   return Component ? <Component key={block.id} data={block} /> : null;
 }
 
