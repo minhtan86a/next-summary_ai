@@ -23,7 +23,7 @@ interface HeroSectionProps {
   link: Link;
 }
 export function HeroSection({ data }: { readonly data: HeroSectionProps }) {
-  console.dir(data, { depth: null });
+  //console.dir(data, { depth: null });
   const { heading, subHeading, image, link } = data;
   const imageURL = "http://localhost:1337" + image.url;
 

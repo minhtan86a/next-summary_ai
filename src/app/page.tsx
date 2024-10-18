@@ -24,8 +24,11 @@ async function getStrapiData(path: string) {
   const baseUrl = "http://localhost:1337";
 
   const url = new URL(path, baseUrl);
-  console.log(url);
+  //console.log(url);
+  //console.log("homePageQuery:", homePageQuery);
   url.search = homePageQuery;
+  //console.log(url.search);
+  //console.log(url.href);
 
   try {
     const response = await fetch(url.href, { cache: "no-store" });
@@ -39,7 +42,7 @@ async function getStrapiData(path: string) {
 export default async function Home() {
   const strapiData = await getStrapiData("/api/home-page");
 
-  console.dir(strapiData, { depth: null });
+  //console.dir(strapiData, { depth: null });
 
   const { blocks } = strapiData.data;
 
