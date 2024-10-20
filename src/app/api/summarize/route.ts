@@ -55,7 +55,6 @@ async function generateSummary(content: string, template: string) {
 
   try {
     const summary = await chain.invoke({ text: content });
-    //console.log(summary);
     return summary;
   } catch (error) {
     if (error instanceof Error)
@@ -98,12 +97,13 @@ export async function POST(req: NextRequest) {
     const transformedData = transformData(transcript);
     //console.log("Transcript:", transformedData.text);
 
-    let summary: Awaited<ReturnType<typeof generateSummary>>;
+    //let summary: Awaited<ReturnType<typeof generateSummary>>;
+    //summary = await generateSummary(transformedData.text, TEMPLATE);
+    //console.log("Summary:", summary);
 
-    summary = await generateSummary(transformedData.text, TEMPLATE);
-    console.log("Summary:", summary);
-
-    return new Response(JSON.stringify({ data: summary, error: null }));
+    return new Response(
+      JSON.stringify({ data: transformedData.text, error: null })
+    );
   } catch (error) {
     console.error("Error processing request:", error);
     if (error instanceof Error)
