@@ -1,6 +1,11 @@
+import dynamic from "next/dynamic";
 import { extractYouTubeID } from "@/lib/utils";
 import { getSummaryById } from "@/data/loaders";
-import YouTubePlayer from "@/components/custom/YouTubePlayer";
+import { notFound } from "next/navigation";
+
+const NoSSR = dynamic(() => import("@/components/custom/YouTubePlayer"), {
+  ssr: false,
+});
 
 export default async function SummarySingleRoute({
   params,
@@ -11,7 +16,7 @@ export default async function SummarySingleRoute({
 }) {
   const data = await getSummaryById(params.videoId);
   console.log(data); //no data 404
-  if (data?.error?.status === 404) return <p>No Items Found</p>;
+  if (data?.error?.status === 404) return notFound();
   const videoId = extractYouTubeID(data.videoId);
 
   return (
@@ -20,7 +25,8 @@ export default async function SummarySingleRoute({
         <div className="col-span-3">{children}</div>
         <div className="col-span-2">
           <div>
-            <YouTubePlayer videoId={videoId} />
+            {/* <YouTubePlayer videoId={videoId} /> */}
+            <NoSSR videoId={videoId} />
           </div>
         </div>
       </div>
