@@ -15,6 +15,7 @@ function LinkCard({ id, title, summary }: Readonly<LinkCardProps>) {
       <Card className="relative">
         <CardHeader>
           <CardTitle className="leading-8 text-pink-500">
+            ID:{id}
             {title || "Video Summary"}
           </CardTitle>
         </CardHeader>
