@@ -89,9 +89,5 @@ export async function getSummaries() {
 }
 
 export async function getSummaryById(summaryId: string) {
-  // const url = new URL(`/api/summaries/${summaryId}`, baseUrl);
-  // console.log(url);
-  // return fetchData(url.href);
-
   return fetchData(`${baseUrl}/api/summaries/${summaryId}`);
 }

@@ -23,6 +23,7 @@ export function SummaryCardForm({
   readonly className?: string;
 }) {
   // const deleteSummaryById = deleteSummaryAction.bind(null, item.id);
+  //console.log("item:", item);
 
   return (
     <Card className={cn("mb-8 relative h-auto", className)}>
@@ -38,14 +39,14 @@ export function SummaryCardForm({
               placeholder="Update your title"
               required
               className="mb-4"
-              defaultValue={item.title}
+              defaultValue={item.data.title}
             />
             <Textarea
               name="summary"
               className="flex w-full rounded-md bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:bg-gray-50 focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 mb-4 h-[calc(100vh-245px)] "
-              defaultValue={item.summary}
+              defaultValue={item.data.summary}
             />
-            <input type="hidden" name="id" value={item.id} />
+            <input type="hidden" name="id" value={item.data.id} />
             <SubmitButton
               text="Update Summary"
               loadingText="Updating Summary"

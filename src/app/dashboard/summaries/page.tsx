@@ -7,15 +7,15 @@ interface LinkCardProps {
   id: string;
   title: string;
   summary: string;
+  documentId: string;
 }
 
-function LinkCard({ id, title, summary }: Readonly<LinkCardProps>) {
+function LinkCard({ title, summary, documentId }: Readonly<LinkCardProps>) {
   return (
-    <Link href={`/dashboard/summaries/${id}`}>
+    <Link href={`/dashboard/summaries/${documentId}`}>
       <Card className="relative">
         <CardHeader>
           <CardTitle className="leading-8 text-pink-500">
-            ID:{id}
             {title || "Video Summary"}
           </CardTitle>
         </CardHeader>
@@ -31,6 +31,7 @@ function LinkCard({ id, title, summary }: Readonly<LinkCardProps>) {
 
 export default async function SummariesRoute() {
   const { data } = await getSummaries();
+  //console.log(data);
   if (!data) return null;
   return (
     <div className="grid grid-cols-1 gap-4 p-4">
