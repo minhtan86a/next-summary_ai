@@ -18,10 +18,10 @@ export async function createSummaryAction(payload: Payload) {
   if (!authToken) throw new Error("No auth token found");
 
   const data = await mutateData("POST", "/api/summaries", payload);
+  //console.log(data);
+  //const flattenedData = flattenAttributes(data);
 
-  const flattenedData = flattenAttributes(data);
-  //console.log(flattenedData.id);
-  redirect("/dashboard/summaries/" + flattenedData.id);
+  redirect("/dashboard/summaries/" + data.data.documentId);
 
   //redirect("/dashboard/summaries/" + data.id);
 }
