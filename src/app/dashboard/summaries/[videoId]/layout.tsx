@@ -16,9 +16,9 @@ export default async function SummarySingleRoute({
 }) {
   //console.log("param:", params);
   const data = await getSummaryById(params.videoId);
-  console.log(data);
+  //console.log(data);
   if (data?.error?.status === 404) return notFound();
-  //const videoId = extractYouTubeID(data.videoId);
+  const videoId = extractYouTubeID(data.data.videoId);
 
   return (
     <div>
@@ -26,8 +26,7 @@ export default async function SummarySingleRoute({
         <div className="col-span-3">{children}</div>
         <div className="col-span-2">
           <div>
-            {/* <YouTubePlayer videoId={videoId} /> */}
-            {/* <NoSSR videoId={videoId} /> */}
+            <NoSSR videoId={videoId} />
           </div>
         </div>
       </div>
