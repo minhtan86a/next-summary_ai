@@ -71,7 +71,7 @@ export function SummaryCardForm({
               className="flex w-full rounded-md bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:bg-gray-50 focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 mb-4 h-[calc(100vh-245px)] "
               defaultValue={item.data.summary}
             />
-            <input type="hidden" name="id" value={item.data.id} />
+            <input type="hidden" name="id" value={item.data.documentId} />
             <SubmitButton
               text="Update Summary"
               loadingText="Updating Summary"
