@@ -83,8 +83,24 @@ export async function getGlobalPageMetadata() {
   return await fetchData(url.href);
 }
 
-export async function getSummaries() {
+// export async function getSummaries() {
+//   const url = new URL("/api/summaries", baseUrl);
+//   return fetchData(url.href);
+// }
+
+//Update search function
+export async function getSummaries(queryString: string) {
+  const query = qs.stringify({
+    sort: ["createdAt:desc"],
+    filters: {
+      $or: [
+        { title: { $containsi: queryString } },
+        { summary: { $containsi: queryString } },
+      ],
+    },
+  });
   const url = new URL("/api/summaries", baseUrl);
+  url.search = query;
   return fetchData(url.href);
 }
 
