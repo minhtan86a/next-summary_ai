@@ -9,13 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@langchain/core": "^0.3.13",
+    "@langchain/google-genai": "^0.1.0",
     "@langchain/openai": "^0.3.11",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@types/qs": "^6.9.16",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "langchain": "^0.3.2",
     "lucide-react": "^0.453.0",
     "next": "14.2.15",
     "next-themes": "^0.3.0",
