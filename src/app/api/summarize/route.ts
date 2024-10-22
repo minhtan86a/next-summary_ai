@@ -22,19 +22,35 @@ function transformData(data: any[]) {
   };
 }
 
+// const TEMPLATE = `
+// INSTRUCTIONS:
+//   For the this {text} complete the following steps.
+//   Generate the title based on the content provided
+//   Summarize the following content and include 5 key topics, writing in first person using normal tone of voice.
+
+//   Write a youtube video description
+//     - Include heading and sections.
+//     - Incorporate keywords and key takeaways
+
+//   Generate bulleted list of key points and benefits
+
+//   Return possible and best recommended key words
+// `;
+
+//Version vietnamese
 const TEMPLATE = `
-INSTRUCTIONS: 
-  For the this {text} complete the following steps.
-  Generate the title based on the content provided
-  Summarize the following content and include 5 key topics, writing in first person using normal tone of voice.
-  
-  Write a youtube video description
-    - Include heading and sections.  
-    - Incorporate keywords and key takeaways
+Hướng dẫn: 
+  Cho cái này {text} hoàn thành theo các bước sau.
+  Tạo một tiêu đề dựa trên nội dung được cung cấp
+  Tóm tắt nội dung sau và đưa vào 5 chủ đề chính, viết ở ngôi thứ nhất sử dụng giọng điệu bình thường.
 
-  Generate bulleted list of key points and benefits
+  Viết mô tả video trên youtube
+  - Bao gồm tiêu đề và các phần.
+  - Kết hợp các từ khóa và nội dung chính
 
-  Return possible and best recommended key words
+  Tạo danh sách các điểm chính và lợi ích theo dạng dấu đầu dòng
+
+  Trả về các từ khóa có thể và được đề xuất tốt nhất
 `;
 
 async function generateSummary(content: string, template: string) {
