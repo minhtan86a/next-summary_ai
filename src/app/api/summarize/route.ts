@@ -93,7 +93,7 @@ async function generateSummary(content: string, template: string) {
 }
 
 export async function POST(req: NextRequest) {
-  console.log("FROM OUR ROUTE HANDLER:", req.body);
+  //console.log("FROM OUR ROUTE HANDLER:", req.body);
 
   const user = await getUserMeLoader();
   const token = await getAuthToken();

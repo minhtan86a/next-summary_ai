@@ -14,7 +14,7 @@ type YtFetchConfig = {
 };
 
 async function fetchTranscript(videoId: string, config: YtFetchConfig = {}) {
-  console.log("fetchTranscript", videoId);
+  //console.log("fetchTranscript", videoId);
   const identifier = extractYouTubeID(videoId);
   const lang = config?.lang ?? "en";
   try {
