@@ -38,8 +38,9 @@ export function Footer({ data }: Readonly<FooterProps>) {
             return (
               <Link
                 className="text-white hover:text-gray-300"
-                href={link.url}
+                href={`https://${link.url}`}
                 key={link.id}
+                target="_blank"
               >
                 {selectSocialIcon(link.url)}
                 <span className="sr-only">Visit us at {link.text}</span>
