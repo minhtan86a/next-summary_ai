@@ -12,6 +12,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "placehold.co",
       },
+      {
+        protocol: "https",
+        hostname: "fruitful-bear-d19f4212b4.media.strapiapp.com",
+      },
     ],
   },
 };
